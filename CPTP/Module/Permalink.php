@@ -97,7 +97,27 @@ class CPTP_Module_Permalink extends CPTP_Module {
 		$permalink = $wp_rewrite->get_extra_permastruct( $post_type );
 
 		$permalink = str_replace( '%post_id%', $post->ID, $permalink );
-		$permalink = str_replace( CPTP_Module_Rewrite::get_slug_placeholder( $post_type ), $pt_object->rewrite['slug'], $permalink );
+		$current_language = apply_filters( 'wpml_current_language', null );
+		//if($pt_object->name == "avada-portfolio" || $pt_object->rewrite['slug'] == "avada-portfolio"){
+		//$this->stampa_stack();
+		//echo ">".$current_language." - ".$pt_object->rewrite['slug']."< <br />";
+		//echo "END";
+		//}
+		 if($current_language == "it") {
+            $translated_slug = "prodotti-srt-";
+        } else {
+            $translated_slug = "srt-products-";
+        }
+		//if ($current_language == "it" && $pt_object->rewrite['slug'] == "prodotti-srt-") {
+		//	$translated_slug = apply_filters(
+		//		'wpml_translate_single_string',
+		//		$pt_object->rewrite['slug'],
+		//		'SRT',
+		//		'URL slug: ' . $pt_object->name,
+		//		$current_language
+		//	);
+		//}
+		$permalink = str_replace( CPTP_Module_Rewrite::get_slug_placeholder( $post_type ), $translated_slug, $permalink );
 
 		// has parent.
 		$parentsDirs = '';

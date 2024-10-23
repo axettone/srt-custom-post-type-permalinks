@@ -1,7 +1,7 @@
 <?php
 /**
- * Plugin Name: Custom Post Type Permalinks
- * Plugin URI: https://github.com/torounit/custom-post-type-permalinks
+ * Plugin Name: Custom Post Type Permalinks - Forked by PNG
+ * Plugin URI: https://github.com/axettone/srt-custom-post-type-permalinks
  * Description:  Add post archives of custom post type and customizable permalinks.
  * Author: Toro_Unit
  * Author URI: https://torounit.com/
